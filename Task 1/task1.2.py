@@ -1,7 +1,14 @@
 # Написать функцию, генерирующую ровно 1<k<40 простых чисел и возвращающую их упорядоченный список.
 
+from FuncST import filter_primes
+
+
 def generate_primes(n):
-    ...
+    if (type(n) == int) and (1 < n < 40):
+        c = filter_primes(200)
+        return c[:n]
+    else:
+        return None
 
 
 if __name__ == '__main__':

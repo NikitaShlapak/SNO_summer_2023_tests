@@ -2,7 +2,8 @@
 # и возвращающую True если последовательность верна и False - если нет.
 
 def check_brackets(line: str):
-    ...
+    for i in range(line.length):
+        
 
 
 if __name__ == '__main__':
