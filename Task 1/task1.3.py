@@ -1,8 +1,10 @@
 # Написать функцию, генерирующую ровно 1<k<40 простых чисел и возвращающую их упорядоченный список.
 # Тело функции должно быть в 1 строку. k всегда в указанном диапазоне и всегда int.
+from FuncST import filter_primes
+
 
 def generate_primes(n):
-    return ...
+    return [x**2+x+41 for x in range(n)]
 
 
 if __name__ == '__main__':
