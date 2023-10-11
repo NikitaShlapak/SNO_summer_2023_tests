@@ -7,7 +7,8 @@ import chess.svg
 
 
 def check_rooks(line: str):
-    ...
+    board = chess.Board(line)
+
 
 
 if __name__ == '__main__':
