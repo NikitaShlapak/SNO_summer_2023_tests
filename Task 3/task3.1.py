@@ -2,8 +2,32 @@
 # На доске находятся ладьи. Функция должна возвращать False, если хотя бы одна ладья атакует другую и True - если нет.
 
 def check_rooks(line: str):
-    ...
+    line = line.split('/')
 
+    board = []
+
+    for i in range(8):
+        st = line[i]
+        b = []
+        for k in range(len(st)):
+            if st[k] == 'R':
+                b.append(1)
+            else:
+                for e in range(int(st[k])):
+                    b.append(0)
+        board.append(b)
+
+    for i in range(8):
+        if sum(board[i]) > 1:
+            return False
+
+        k = 0
+        for j in range(8):
+            k += board[j][i]
+        if k > 1:
+            return False
+    else:
+        return True
 
 if __name__ == '__main__':
     # Simple tests:

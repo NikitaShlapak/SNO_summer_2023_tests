@@ -3,8 +3,46 @@
 # Вместе с ответом True должен выводиться список всех полей, на которые ещё можно поставить ладью без нарушения правила
 
 def check_rooks(line: str):
-    ...
+    line = line.split('/')
 
+    board = []
+
+    for i in range(8):
+        st = line[i]
+        b = []
+        for k in range(len(st)):
+            if st[k] == 'R':
+                b.append(1)
+            else:
+                for e in range(int(st[k])):
+                    b.append(0)
+        board.append(b)
+
+    lines = [0] * 8
+    columns = [0] * 8
+
+    for i in range(8):
+        if sum(board[i]) > 1:
+            return False
+        elif sum(board[i]) == 0:
+            lines[i] = 1
+
+        k = 0
+        for j in range(8):
+            k += board[j][i]
+        if k > 1:
+            return False
+        elif k == 0:
+            columns[i] = 1
+    else:
+        positions = []
+        letters = 'abcdefgh'
+
+        for e in range(8):
+            for t in range(8):
+                if lines[e] + columns[t] == 2:
+                    positions.append(letters[t] + str(e + 1))
+        return True, positions
 
 if __name__ == '__main__':
     # Simple tests:
