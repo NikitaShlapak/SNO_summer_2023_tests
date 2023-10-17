@@ -2,7 +2,7 @@
 # Тело функции должно быть в 1 строку. k всегда в указанном диапазоне и всегда int.
 
 def generate_primes(n):
-    return ...
+    return [x**2+x+41 for x in range(n)]
 
 
 if __name__ == '__main__':
