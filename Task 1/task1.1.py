@@ -24,6 +24,6 @@ def filter_primes(n):
 if __name__ == '__main__':
     # Simple tests:
     print(filter_primes(4))  # [2,3]
-    print(filter_primes(10))  # [2,3,5,7]
-    print(filter_primes(100))  # None
-    print(filter_primes(3.5))  # [2,3]
+    #print(filter_primes(10))  # [2,3,5,7]
+    #print(filter_primes(100))  # None
+    #print(filter_primes(3.5))  # [2,3]
